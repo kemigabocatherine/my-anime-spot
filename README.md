@@ -1,1 +1,1 @@
-# my-anime-spot
+# My-anime-spot
