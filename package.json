@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "create-babelrc": "^1.0.0",
+    "espree": "^9.3.2",
     "logger": "^0.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -16,6 +17,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-state-provider": "^0.0.4",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
@@ -42,5 +45,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-scss": "^3.21.0"
   }
 }
