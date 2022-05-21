@@ -53,6 +53,8 @@ Use the following steps to run this Project locally:
 
 - Run in the terminal `npm run test` to run tests on the application
 
+## Author
+
 👤 **Kemigabo Catherine**
 
 - GitHub: [@github](https://github.com/kemigabocatherine)
