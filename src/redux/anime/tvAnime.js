@@ -1,7 +1,7 @@
-import myReducer from '../handler/reducer';
+import generateReducer from '../handler/reducer';
 
-const { fetchAnime: fetchTvAnime, reducer } = myReducer('tvAnime', 'tv');
+const { fetchAnime: fetchTvAnime, filterAnime: filterTvAnime, reducer } = generateReducer('tvAnime', 'tv');
 
-export { fetchTvAnime };
+export { fetchTvAnime, filterTvAnime };
 
 export default reducer;

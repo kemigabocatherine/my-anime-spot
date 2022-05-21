@@ -1,7 +1,7 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit';
+import { createAsyncThunk, createReducer, createAction } from '@reduxjs/toolkit';
 import getAnime from './api';
 
-const myReducer = (name, type) => {
+const generateReducer = (name, type) => {
   const fetchAnime = createAsyncThunk(
     `${name}/fetchAnime`,
     async () => {
@@ -10,17 +10,35 @@ const myReducer = (name, type) => {
     },
   );
 
-  const reducer = createReducer({
+  const initialState = {
     data: [],
+    dataFiltered: [],
     status: 'iddle',
-  }, (builder) => {
+  };
+
+  const filterAnime = createAction(`${name}/filterAnime`);
+
+  const reducer = createReducer(initialState, (builder) => {
     builder.addCase(fetchAnime.fulfilled, (state, action) => ({
       data: action.payload,
+      dataFiltered: action.payload,
       status: 'completed',
+    }));
+    builder.addCase(filterAnime, (state, action) => ({
+      ...state,
+      dataFiltered: action.payload === 'All' ? state.data : state.data.filter((anime) => {
+        for (let i = 0; i < anime.genres.length; i += 1) {
+          const genre = anime.genres[i];
+          if (genre.name === action.payload) {
+            return true;
+          }
+        }
+        return false;
+      }),
     }));
   });
 
-  return { fetchAnime, reducer };
+  return { filterAnime, fetchAnime, reducer };
 };
 
-export default myReducer;
+export default generateReducer;
