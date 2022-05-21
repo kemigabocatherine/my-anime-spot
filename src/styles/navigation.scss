@@ -1,0 +1,119 @@
+@import 'variables';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-container-low;
+  padding: 2rem 1rem;
+  font-family: 'Lato', sans-serif;
+  height: 5rem;
+
+  h1 {
+    color: $primary;
+    font-size: 2.7rem;
+    font-weight: 380;
+    text-align: center;
+    padding: 5px;
+    animation: slide-in 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  }
+
+  div {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+  animation: fade-in 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.signature {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  bottom: 20px;
+  flex-wrap: wrap;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  p {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
+.settings-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  z-index: 3;
+  background-color: $secondary-container-low;
+  animation: slide-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+
+  button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  p {
+    color: $secondary;
+  }
+
+  form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
+    padding-top: 3rem;
+
+    p {
+      font-size: 3rem;
+      font-weight: 600;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+.nav-selector {
+  display: flex;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    p {
+      margin-right: 30px;
+    }
+
+    animation: slide-down 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+select {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  color: $on-primary;
+  border-radius: 5px;
+  background-color: $tertiary-container;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 5px 5px 5px 2px $on-tertiary-low;
+}

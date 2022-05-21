@@ -1,0 +1,142 @@
+@import 'variables';
+
+.info {
+  flex-direction: column;
+
+  p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 3px;
+    z-index: 2;
+    animation: slide-up 1s cubic-bezier(0.165, 0.84, 0.44, 1), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  background-color: $background;
+
+  @media screen and (max-width: 320px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+.anime-card {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+  background-color: $tertiary-container;
+  margin-bottom: 30px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 3px 6px 6px 1px #024282f7;
+  border-radius: 20px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 2);
+  animation: slide-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
+
+  p,
+  li,
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: transparent;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
+    border-radius: 20px;
+    animation: fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
+
+    @media screen and (max-width: 320px) {
+      object-fit: cover;
+    }
+  }
+
+  .airing {
+    justify-content: space-between;
+
+    .box {
+      background-color: $secondary;
+      color: $on-secondary;
+      border-radius: 15px;
+      border: 1px solid $outline;
+      text-decoration: none;
+    }
+  }
+
+  .genres-container {
+    column-gap: 20px;
+  }
+
+  .details {
+    background-color: $background-low;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 1px 3px 3px 3px;
+    animation: fade-in 2s cubic-bezier(0.2, 0.6, 0.8, 1);
+
+    h2 {
+      text-decoration: none;
+    }
+  }
+
+  .score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+    background-color: $on-primary-container;
+    box-shadow: 3px 3px 3px 1px;
+    color: $on-secondary;
+    border-radius: 10px 0 10px 10px;
+    animation: slide-in 1s cubic-bezier(0.2, 0.6, 0.8, 1), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
+  }
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-container;
+  height: 40vh;
+}
+
+.silhouette {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  padding-right: 7rem;
+  padding-left: 5rem;
+}
