@@ -18,7 +18,15 @@ function App() {
 
   return (
     <div className="App">
-      <header>Animes</header>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="details/:title/:id" element={<Details />} />
+        </Routes>
+      </main>
     </div>
   );
 }
