@@ -11,6 +11,12 @@
     z-index: 2;
     animation: slide-up 1s cubic-bezier(0.165, 0.84, 0.44, 1), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
   }
+
+  .note {
+    margin-top: 0;
+    margin-bottom: 1px;
+    font-size: 2rem;
+  }
 }
 
 .cards-container {
@@ -27,11 +33,6 @@
 
 h2 {
   margin-bottom: 5px;
-}
-
-.note {
-  font-size: 1rem;
-  text-transform: lowercase;
 }
 
 .anime-card {

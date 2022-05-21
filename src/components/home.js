@@ -62,11 +62,11 @@ const Home = () => {
             <img className="silhouette" src={image1} alt="" />
             <p>{`Type: ${type.match(/\w+(?=Anime)/g)}`}</p>
             <p>{`Category: ${category}`}</p>
-            <p className="note">
+            <h4 className="note">
               (Click
               <IoMdSettings />
-              for menu)
-            </p>
+              to filter)
+            </h4>
             <p>{`Results: ${dataFiltered.length}`}</p>
           </div>
           <ul className="cards-container">

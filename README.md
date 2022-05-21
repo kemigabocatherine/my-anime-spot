@@ -17,7 +17,7 @@ In this project,I have built a single page app that fetches data from the [Jikan
 
 ## Live Demo
 
-Not yet added
+[ANIME HUB](https://sprightly-semifreddo-452a39.netlify.app/)
 
 ## Intallations
 
@@ -50,6 +50,8 @@ Use the following steps to run this Project locally:
 - Run in the terminal `npm install` to install all dependencies
 
 - Run in the terminal `npm start` to launch the application
+
+- Run in the terminal `npm run test` to run tests on the application
 
 👤 **Kemigabo Catherine**
 

@@ -7,6 +7,7 @@ import {
   fireEvent,
 } from './reducert/reducert';
 import Home from '../components/home';
+// import App from './App';
 import App from '../App';
 import paget from './mocks/paget';
 import '@testing-library/jest-dom';
