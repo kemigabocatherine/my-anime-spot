@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import 'variables';
+
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+@font-face {
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Bold'),
+    local('GillSans-CondensedBold'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Regular'),
+    local('GillSans-CondensedRegular'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 10px;
+}
+
+.App {
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'navigation'
+    'main-content';
+  background-color: $background;
+}
+
+header {
+  grid-area: navigation;
+}
+
+main {
+  grid-area: main-content;
+  overflow: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar {
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+    width: 10px;
+  }
+}
+
+main::-webkit-scrollbar-track {
+  background-color: $background-low;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: $secondary;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+  background-color: $on-tertiary-low;
+}
+
+p,
+li,
+h2,
+h3 {
+  font-family: 'Gill Sans', sans-serif;
+  color: $primary;
+  font-size: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: block;
+  border: 1px solid $outline;
+  padding: 5px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h2 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+}
+
+button:hover,
+select:hover {
+  cursor: pointer;
+}
