@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // Import Fetching and Filtering Actions
+import { IoMdSettings } from 'react-icons/io';
 import { fetchTvAnime, filterTvAnime } from '../redux/anime/tvAnime';
 import { fetchSpecialAnime, filterSpecialAnime } from '../redux/anime/specialAnime';
 import { fetchMovieAnime, filterMovieAnime } from '../redux/anime/movieAnime';
@@ -18,33 +19,33 @@ const Home = () => {
   const { status, dataFiltered } = useSelector((state) => state[type]);
 
   useEffect(() => {
-    dispatch(changePage('Home page'));
+    dispatch(changePage('Anime Hub'));
     const displayData = async () => {
       switch (type) {
         case 'tvAnime': {
           if (status === 'iddle') {
-            await dispatch(fetchTvAnime());
+            dispatch(fetchTvAnime());
           }
           dispatch(filterTvAnime(category));
           break;
         }
         case 'specialAnime': {
           if (status === 'iddle') {
-            await dispatch(fetchSpecialAnime());
+            dispatch(fetchSpecialAnime());
           }
           dispatch(filterSpecialAnime(category));
           break;
         }
         case 'movieAnime': {
           if (status === 'iddle') {
-            await dispatch(fetchMovieAnime());
+            dispatch(fetchMovieAnime());
           }
           dispatch(filterMovieAnime(category));
           break;
         }
         default: {
           if (status === 'iddle') {
-            await dispatch(fetchTvAnime());
+            dispatch(fetchTvAnime());
           }
           dispatch(filterTvAnime(category));
         }
@@ -61,6 +62,11 @@ const Home = () => {
             <img className="silhouette" src={image1} alt="" />
             <p>{`Type: ${type.match(/\w+(?=Anime)/g)}`}</p>
             <p>{`Category: ${category}`}</p>
+            <p className="note">
+              (Click
+              <IoMdSettings />
+              for menu)
+            </p>
             <p>{`Results: ${dataFiltered.length}`}</p>
           </div>
           <ul className="cards-container">
