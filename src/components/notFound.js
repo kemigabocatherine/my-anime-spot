@@ -4,13 +4,12 @@ const SorryElement = () => (
   <div className="loading-container">
     <h2>{'Sorry. We couldn\'t find an anime that matches this category'}</h2>
     <iframe
-      title="Sorry GIF"
-      // src="https://giphy.com/embed/13LunYkkBppSBa"
-      // width="480"
-      // height="245"
-      // frameBorder="0"
-      // className="giphy-embed"
-      // allowFullScreen
+      title="sad panda"
+      src="https://gifer.com/embed/XQR6"
+      width="480"
+      height="640.000"
+      frameBorder="0"
+      allowFullScreen
     />
   </div>
 );
